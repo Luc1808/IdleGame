@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "800218491084",
+    "project_id": "idlegame-12a70",
+    "storage_bucket": "idlegame-12a70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800218491084:android:75045646bd9d804803ba69",
+        "android_client_info": {
+          "package_name": "com.example.idlegame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaBGQV5TRZEK3BWntQs06sKxbddxc9iJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
