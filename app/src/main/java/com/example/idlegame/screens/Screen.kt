@@ -1,8 +1,7 @@
-package com.example.idlegame
+package com.example.idlegame.screens
 
 sealed class Screen(val route: String ) {
     object LoginScreen : Screen("loginscreen")
     object SignupScreen : Screen("signupscreen")
-    object MainScreen: Screen("mainscreen")
-    object ProfileScreen: Screen("profilescreen")
+    object UserProfileScreen : Screen("userprofilescreen")
 }

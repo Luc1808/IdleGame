@@ -1,4 +1,4 @@
-package com.example.idlegame
+package com.example.idlegame.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -24,6 +24,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.idlegame.R
 import com.google.firebase.auth.FirebaseAuth
 
 @Composable
@@ -58,10 +59,11 @@ fun LoginScreen(navController: NavController, auth: FirebaseAuth) {
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Button(onClick = {
-                auth.signInWithEmailAndPassword(email, password)
+                auth.signInWithEmailAndPassword(email.trim(), password.trim())
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(context, "Login successful!", Toast.LENGTH_SHORT).show()
+                            navController.navigate(Screen.UserProfileScreen.route)
                         } else {
                             Toast.makeText(context, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                         }
