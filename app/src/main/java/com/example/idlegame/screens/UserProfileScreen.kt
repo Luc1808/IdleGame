@@ -45,11 +45,11 @@ fun UserProfileScreen(navController: NavController, auth: FirebaseAuth, userRepo
     ) {
         if (user != null) {
             // Display user details
-            Text(text = "User ID: ${user.uid}")
+            Text(text = "User Level: ${userEntity?.level}")
             Spacer(modifier = Modifier.padding(8.dp))
             Text(text = "Email: ${user.email ?: "No email available"}")
             Spacer(modifier = Modifier.padding(8.dp))
-            Text(text = "Display Name: ${user.displayName ?: "No display name available"}")
+            Text(text = "Display Name: ${userEntity?.name ?: "No display name available"}")
 
             Spacer(modifier = Modifier.padding(16.dp))
 
