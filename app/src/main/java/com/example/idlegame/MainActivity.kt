@@ -12,23 +12,15 @@ import com.google.firebase.auth.auth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-private const val TAG = "MainActivity"
 
 class MainActivity : ComponentActivity() {
-    private lateinit var auth: FirebaseAuth
-    private lateinit var userRepository: UserRepository
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = FirebaseAuth.getInstance()
-//        Log.i(TAG, "onCreate: ${auth.currentUser}")
 
-        val userDao = UserDatabase.getDatabase(this).userDao()
-        userRepository = UserRepository(userDao)
-
+        val viewModel = SkillsViewModel()
         setContent {
             IdleGameTheme {
-                Navigation(auth, userRepository)
+                SkillsScreen(viewModel)
             }
         }
     }
