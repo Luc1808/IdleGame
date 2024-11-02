@@ -8,12 +8,13 @@ import androidx.lifecycle.ViewModel
 class SkillsViewModel: ViewModel() {
 
     private var _exp by mutableIntStateOf(0)
-    private var exp by mutableIntStateOf(_exp)
+    val exp: Int get() = _exp
 
     private var _expToLvlUp by mutableIntStateOf(5)
+    val expToLvlUp: Int get() = _expToLvlUp
 
     private var _lvl by mutableIntStateOf(1)
-    var lvl by mutableIntStateOf(_lvl)
+    val lvl: Int get() = _lvl
 
     fun addExp(addedExp: Int) {
         _exp += addedExp
@@ -24,8 +25,8 @@ class SkillsViewModel: ViewModel() {
     }
 
     private fun lvlUp() {
-        _expToLvlUp *= 2
-        lvl++
-        exp = 0
+        _expToLvlUp = (_expToLvlUp * 1.25).toInt()
+        _lvl++
+        _exp = 0
     }
 }
