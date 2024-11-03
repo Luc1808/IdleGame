@@ -22,9 +22,6 @@ fun ShoppingScreen(navController: NavController) {
     ) {
        Text(text = "Shopping Screen", fontSize = 30.sp)
 
-        Button(onClick = { navController.navigate(Screen.Skills.route) }) {
-           Text(text = "Skills")
-        }
     }
 }
 

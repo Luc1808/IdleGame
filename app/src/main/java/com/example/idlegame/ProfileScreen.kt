@@ -31,9 +31,5 @@ fun ProfileScreen(viewModel: SkillsViewModel, navController: NavController) {
        Spacer(modifier = Modifier.height(16.dp))
 
        Text(text = "Level: ${viewModel.lvl}")
-
-        Button(onClick = { navController.navigate(Screen.Skills.route) }) {
-           Text(text = "Skills")
-        }
     }
 }

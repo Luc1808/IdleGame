@@ -54,14 +54,6 @@ fun SkillsScreen(viewModel: SkillsViewModel, navController: NavHostController) {
         SkillButton(title = "2", onClick = { viewModel.addExp(2) }, coolDownTime = 500)
         SkillButton(title = "3", onClick = { viewModel.addExp(3) }, coolDownTime = 1100)
         SkillButton(title = "4", onClick = { viewModel.addExp(4) }, coolDownTime = 1500)
-        Row {
-            Button(onClick = { navController.navigate(Screen.Shopping.route) }) {
-                Text(text = "Shopping")
-            }
-            Button(onClick = { navController.navigate(Screen.Profile.route) }) {
-                Text(text = "Profile")
-            }
-        }
     }
 }
 
