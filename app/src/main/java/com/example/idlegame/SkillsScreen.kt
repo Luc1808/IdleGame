@@ -3,6 +3,7 @@ package com.example.idlegame
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -11,9 +12,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Arrangement.Absolute.spacedBy
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -30,11 +31,11 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.delay
+import androidx.navigation.NavHostController
 import kotlinx.coroutines.launch
 
 @Composable
-fun SkillsScreen(viewModel: SkillsViewModel) {
+fun SkillsScreen(viewModel: SkillsViewModel, navController: NavHostController) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -49,10 +50,18 @@ fun SkillsScreen(viewModel: SkillsViewModel) {
 
         Spacer(modifier = Modifier.padding(16.dp))
 
-        SkillButton(title = "1", onClick = { viewModel.addExp(1) }, coolDownTime = 200)
+        SkillButton(title = "1", onClick = { viewModel.addExp(1) }, coolDownTime = 100)
         SkillButton(title = "2", onClick = { viewModel.addExp(2) }, coolDownTime = 500)
         SkillButton(title = "3", onClick = { viewModel.addExp(3) }, coolDownTime = 1100)
         SkillButton(title = "4", onClick = { viewModel.addExp(4) }, coolDownTime = 1500)
+        Row {
+            Button(onClick = { navController.navigate(Screen.Shopping.route) }) {
+                Text(text = "Shopping")
+            }
+            Button(onClick = { navController.navigate(Screen.Profile.route) }) {
+                Text(text = "Profile")
+            }
+        }
     }
 }
 

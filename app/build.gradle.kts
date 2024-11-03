@@ -60,13 +60,14 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.firestore.ktx)
 
     // Coroutine
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.room.ktx)
 
+    // Room dependencies
     implementation(libs.androidx.room.runtime)
-    implementation(libs.firebase.firestore.ktx)
     annotationProcessor(libs.androidx.room.compiler)
     ksp(libs.androidx.room.compiler)
 
