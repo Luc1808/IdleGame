@@ -3,12 +3,9 @@ package com.example.idlegame
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.PlayArrow
@@ -26,13 +23,16 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.idlegame.ui.theme.IdleGameTheme
+import com.example.idlegame.screens.ProfileScreen
+import com.example.idlegame.screens.Screen
+import com.example.idlegame.screens.ShoppingScreen
+import com.example.idlegame.screens.SkillsScreen
+import com.example.idlegame.viewmodels.SkillsViewModel
 
 
 class MainActivity : ComponentActivity() {
@@ -85,7 +85,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     composable(Screen.Skills.route) { SkillsScreen(viewModel, navController) }
                     composable(Screen.Profile.route) { ProfileScreen(viewModel, navController) }
-                    composable(Screen.Shopping.route) { ShoppingScreen(navController) }
+                    composable(Screen.Shopping.route) { ShoppingScreen(viewModel) }
                 }
             }
         }

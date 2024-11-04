@@ -1,4 +1,4 @@
-package com.example.idlegame
+package com.example.idlegame.screens
 
 sealed class Screen(val route: String) {
     object Skills : Screen("skills_screen")
