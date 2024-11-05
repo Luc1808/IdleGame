@@ -28,10 +28,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.idlegame.screens.ProfileScreen
-import com.example.idlegame.screens.Screen
-import com.example.idlegame.screens.ShoppingScreen
-import com.example.idlegame.screens.SkillsScreen
+import com.example.idlegame.views.ProfileScreen
+import com.example.idlegame.views.Screen
+import com.example.idlegame.views.ShoppingScreen
+import com.example.idlegame.views.SkillsScreen
 import com.example.idlegame.viewmodels.SkillsViewModel
 
 

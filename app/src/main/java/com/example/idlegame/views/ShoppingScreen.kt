@@ -1,4 +1,4 @@
-package com.example.idlegame.screens
+package com.example.idlegame.views
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

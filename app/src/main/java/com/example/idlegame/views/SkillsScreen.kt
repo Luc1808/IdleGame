@@ -1,4 +1,4 @@
-package com.example.idlegame.screens
+package com.example.idlegame.views
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -32,7 +32,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.idlegame.ui.theme.btnLvl1
 import com.example.idlegame.viewmodels.SkillsViewModel
 import kotlinx.coroutines.launch
 
