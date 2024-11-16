@@ -9,6 +9,9 @@ interface ButtonDataDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertButton(button: ButtonData)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(buttons: List<ButtonData>)
+
     @Query("SELECT * FROM ButtonData WHERE id = :id")
     suspend fun getButton(id: String): ButtonData?
 

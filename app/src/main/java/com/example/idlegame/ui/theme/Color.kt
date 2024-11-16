@@ -12,5 +12,5 @@ val Pink40 = Color(0xFF7D5260)
 
 
 
-val btnLvl1 = Color(0xFF275b81)
-val btnLvl2 = Color(0xFFFF5722)
+val btnLvl1 = "FF275b81"
+val btnLvl2 = "FFFF5722"

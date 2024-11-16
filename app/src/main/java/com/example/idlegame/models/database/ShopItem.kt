@@ -10,6 +10,7 @@ data class ShopItem(
     val name: String,
     val description: String,
     val buff: String,
-    val buttonId: String,
-    val lvlUnlocked: Int
+    val buttonID: Int,
+    val baseLvlUnlocked: Int, // Base level for the first unlock
+    val levelMultiplier: Int // Multiplier for subsequent unlocks
 )

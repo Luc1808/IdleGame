@@ -32,6 +32,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.idlegame.ui.theme.btnLvl1
 import com.example.idlegame.viewmodels.SkillsViewModel
 import kotlinx.coroutines.launch
 
@@ -65,9 +66,9 @@ fun SkillsScreen(viewModel: SkillsViewModel, navController: NavHostController) {
             items(buttonList) { buttonData ->
                 SkillButton(
                     title = buttonData.title,
-                    onClick = { buttonData.onClick() },
+                    onClick = { viewModel.addExp(buttonData.multiplier) },
                     coolDownTime = buttonData.coolDownTime,
-                    color = buttonData.color
+                    color = Color(buttonData.color.toLong(16))
                 )
             }
         }

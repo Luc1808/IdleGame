@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.idlegame.models.database.AppDatabase
 import com.example.idlegame.views.ProfileScreen
 import com.example.idlegame.views.Screen
 import com.example.idlegame.views.ShoppingScreen
@@ -39,7 +40,14 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val viewModel = SkillsViewModel()
+        deleteDatabase("idlegame-db")
+
+        val buttonDataDao = AppDatabase.getDatabase(applicationContext).buttonDataDao()
+        val shopItemDao = AppDatabase.getDatabase(applicationContext).shopItemDao()
+        val userProgressDao = AppDatabase.getDatabase(applicationContext).userProgressDao()
+
+
+        val viewModel = SkillsViewModel(buttonDataDao, shopItemDao, userProgressDao)
         setContent {
             val navController = rememberNavController()
 
